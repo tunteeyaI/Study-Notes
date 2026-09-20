@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Study Notes AI</div>
+        <ul class="nav-links">
+            <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('studio') }}">Studio</a></li>
+            <li><a href="{{ url_for('library') }}">Library</a></li>
+        </ul>
+        <a href="{{ url_for('studio') }}" class="design-button">Generate Notes</a>
+    </nav>
+    <section class="hero">
+        <div class="left">
+            <h1>Generate Your Notes
+                <span class="school">PERFECT</span><br>
+                NOTES ACCORDING TO YOUR PROMPT.
+            </h1>
+            <p class="description">Describe your lesson. Our AI will generate a suitable method for you!</p>
+            <div class="buttons">
+                <a href="{{ url_for('studio') }}" class="primary">Generate Notes</a>
+                <a href="{{ url_for('library') }}" class="secondary">View Library</a>
+            </div>
+        </div>
+        <div class="right">
+            <img src="{{ url_for('static', filename='icon.png') }}" alt="Study Notes illustration">
+        </div>
+    </section>
+    <footer>
+        © ALL RIGHTS RESERVED, Created by Ijlal
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

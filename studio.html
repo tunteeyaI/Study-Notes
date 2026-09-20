@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Study Notes AI</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a class="active" href="{{ url_for('studio') }}">Studio</a></li>
+            <li><a href="{{ url_for('library') }}">Library</a></li>
+        </ul>
+        <a href="{{ url_for('studio') }}" class="design-button">Generate Notes</a>
+    </nav>
+    <main class="container form-page">
+        <div class="form-card">
+            <h1>Study Notes AI</h1>
+            <p>Type a prompt and our AI will generate notes specifically for you.</p>
+
+            <label for="title">Note title</label>
+            <input type="text" id="title" placeholder="e.g Python Programming">
+
+            <label for="topics">Topics to cover</label>
+            <div class="topic-input-row">
+                <input type="text" id="topics" placeholder="e.g Variables">
+                <button type="button" id="addTopicButton" class="secondary-button">Add Topic</button>
+            </div>
+            <div id="topiclist" class="topic-list"></div>
+
+            <label for="notetype">Notes type</label>
+            <select id="notetype">
+                <option>Detailed Notes</option>
+                <option>Exam Tips and Quizzes</option>
+                <option>Essay Format</option>
+                <option>Beginner Friendly</option>
+                <option>Quick Revision</option>
+            </select>
+
+            <label for="pages">Number of pages</label>
+            <input type="number" id="pages" value="5" min="1" max="250">
+
+            <label for="grade">Grade</label>
+            <input type="number" id="grade" placeholder="Enter grade" min="1" max="12">
+
+            <div class="checkbox-grid">
+                <label class="checkbox-item"><input type="checkbox" id="examples" checked> Include examples</label>
+                <label class="checkbox-item"><input type="checkbox" id="exercises" checked> Include exercises</label>
+                <label class="checkbox-item"><input type="checkbox" id="summary" checked> Include summary</label>
+            </div>
+
+            <button type="button" id="generateButton" class="generate-button">Generate Notes</button>
+            <p id="loading" class="loading-message"></p>
+        </div>
+    </main>
+    <footer>
+        © ALL RIGHTS RESERVED, Created by Ijlal
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

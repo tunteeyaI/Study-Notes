@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Study Notes AI</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('studio') }}">Studio</a></li>
+            <li><a class="active" href="{{ url_for('library') }}">Library</a></li>
+        </ul>
+        <a href="{{ url_for('studio') }}" class="design-button">Generate Notes</a>
+    </nav>
+    <main class="container library-page">
+        <div class="section-heading">
+            <h1>My Notes</h1>
+            <p>View your saved AI-generated notes.</p>
+            <a href="{{ url_for('studio') }}" class="secondary-link">Create new notes</a>
+        </div>
+
+        <h2>Saved Notes</h2>
+        <div id="librarylist" class="library-grid"></div>
+        <p id="emptymessage" class="empty-state">No notes saved yet.</p>
+    </main>
+    <footer>
+        © ALL RIGHTS RESERVED, Created by Ijlal
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
